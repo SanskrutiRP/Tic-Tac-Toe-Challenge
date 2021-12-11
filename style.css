@@ -93,6 +93,11 @@ body{
 	text-shadow: 0 0 5px #15f4ee , 0 0 5px #15f4ee;
 	transition: .3s;
 }
+.block img{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
 .block:hover{
 	background: rgba(255,255,255,.2);
 }

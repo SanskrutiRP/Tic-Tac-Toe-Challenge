@@ -43,14 +43,14 @@ let windiv = document.querySelectorAll('.winner')[0];
 let blocks = board.querySelectorAll('.block');
 //check whether the player won or not
 function checkWin(par){
-	if( (blocks[0].innerText == par && blocks[1].innerText == par && blocks[2].innerText == par)||
-		(blocks[3].innerText == par && blocks[4].innerText == par && blocks[5].innerText == par)||
-		(blocks[6].innerText == par && blocks[7].innerText == par && blocks[8].innerText == par)||
-		(blocks[0].innerText == par && blocks[3].innerText == par && blocks[6].innerText == par)||
-		(blocks[1].innerText == par && blocks[4].innerText == par && blocks[7].innerText == par)||
-		(blocks[2].innerText == par && blocks[5].innerText == par && blocks[8].innerText == par)||
-		(blocks[0].innerText == par && blocks[4].innerText == par && blocks[8].innerText == par)||
-		(blocks[2].innerText == par && blocks[4].innerText == par && blocks[6].innerText == par)
+	if( (blocks[0].getAttribute('id') == par && blocks[1].getAttribute('id') == par && blocks[2].getAttribute('id') == par)||
+		(blocks[3].getAttribute('id') == par && blocks[4].getAttribute('id') == par && blocks[5].getAttribute('id') == par)||
+		(blocks[6].getAttribute('id') == par && blocks[7].getAttribute('id') == par && blocks[8].getAttribute('id') == par)||
+		(blocks[0].getAttribute('id') == par && blocks[3].getAttribute('id') == par && blocks[6].getAttribute('id') == par)||
+		(blocks[1].getAttribute('id') == par && blocks[4].getAttribute('id') == par && blocks[7].getAttribute('id') == par)||
+		(blocks[2].getAttribute('id') == par && blocks[5].getAttribute('id') == par && blocks[8].getAttribute('id') == par)||
+		(blocks[0].getAttribute('id') == par && blocks[4].getAttribute('id') == par && blocks[8].getAttribute('id') == par)||
+		(blocks[2].getAttribute('id') == par && blocks[4].getAttribute('id') == par && blocks[6].getAttribute('id') == par)
 		)
 		return 1;
 }
@@ -69,7 +69,8 @@ function addListener(){
 
 			//if its Os turn add O to block
 			if(turn == 0 && ele.innerHTML == ""){
-				ele.innerHTML = `<h2>O</h2>`;
+				ele.innerHTML = `<img src="player.png">`;
+				ele.setAttribute('id', 'O');
 				turnof.innerText = "Computers turn";
 				if(checkWin('O')){
 					board.innerHTML='';
@@ -82,8 +83,9 @@ function addListener(){
 				count++;
 			}
 			//if its Xs turn add X to block
-			if(turn == 1 && ele.innerText == ""){
-				ele.innerHTML = `<h2>X</h2>`;
+			if(turn == 1 && ele.innerHTML == ""){
+				ele.innerHTML = `<img src="computer.png">`;
+				ele.setAttribute('id', 'X');
 				turnof.innerText = `${name} turn`;
 				if(checkWin('X')){
 					board.innerHTML='';
