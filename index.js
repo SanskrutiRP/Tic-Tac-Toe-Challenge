@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //
-
+//Get the name of the player
 let name = prompt("Your name");
 document.getElementById("name").innerText = name;
 //
@@ -74,7 +74,7 @@ function addListener(){
 				if(checkWin('O')){
 					board.innerHTML='';
 					windiv.style.display="flex";
-					won.innerText = "Computer won";
+					won.innerText =  `${name} won`;
 					turnof.innerText = "";
 					flag =1;
 				}
@@ -88,7 +88,7 @@ function addListener(){
 				if(checkWin('X')){
 					board.innerHTML='';
 					windiv.style.display="flex";
-					won.innerText = `${name} won`;
+					won.innerText ="Computer won";
 					turnof.innerText = "";
 					flag = 1;
 				}
